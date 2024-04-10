@@ -9,6 +9,8 @@ const map = document.querySelector('.map-box');
 let longitude = 0;
 let latitude = 0;
 
+mapboxgl.accessToken= 'pk.eyJ1IjoiaGVucnktYnJldWtlbG1hbiIsImEiOiJjbHVzdnVmbmowbWFuMnRvYXc5bnoxZzJhIn0.3dWxxXjWkhgnmthMfPBSiA';
+
 /*
   functions
 */
