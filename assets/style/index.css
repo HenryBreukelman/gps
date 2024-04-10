@@ -37,6 +37,17 @@ ul {
   gap: 20px;
 }
 
+.button {
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: #0079f4;
+  color: #fff;
+}
+
+section {
+  margin-top: 20px;
+}
+
 /*
   Header
 */
@@ -76,7 +87,18 @@ nav ul li a:hover, .links i:hover {
   Content
 */
 
+h2, p {
+  color: #fff;
+}
 
+.map-box {
+  width: 80svw;
+  max-width: 850px;
+  height: 80svh;
+  background-color: #00ddff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
 
 /*
   Footer
@@ -84,7 +106,7 @@ nav ul li a:hover, .links i:hover {
 
 footer {
   height: 100px;
-  background-color: rgb(22, 25, 45);
+  background-color: #16192d;
 }
 
 .end {

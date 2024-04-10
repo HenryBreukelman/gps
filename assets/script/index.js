@@ -14,7 +14,30 @@ let latitude = 0;
 */
 
 function loadMap() {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      getLocation, errorHandler, options
+    );
+  } else {
+    console.log('geolocation not supported')
+  }
+}
 
+function getLocation(position) {
+  let { latitude, longitude } = position.coords
+
+  console.log(
+    `Latitude: ${latitude}, 
+    longitude: ${longitude}`
+  );
+}
+
+function errorHandler() {
+  console.log('unable to get location')
+}
+
+const options = {
+  enableHighAccuracy: true
 }
 
 /*
@@ -22,4 +45,4 @@ function loadMap() {
 */
 
 findButton.addEventListener('click', loadMap);
-window.addEventListener('load', loadMap);
+//window.addEventListener('load', loadMap);
