@@ -26,17 +26,51 @@
 
 body {
   font-family: 'Nunito', sans-serif, Arial, sans-serif;
+  background-color: #14161D;
 }
 
 .hidden {
   display: none;
 }
 
+ul {
+  gap: 20px;
+}
+
 /*
   Header
 */
 
+header {
+  height: 60px;
+  background-color: #0079f4;
+}
 
+h1 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 60px;
+}
+
+nav ul li {
+  line-height: 60px;
+  cursor: default;
+  list-style: none;
+}
+
+a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #c7c7ed;
+}
 
 /*
   Content
