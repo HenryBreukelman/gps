@@ -68,10 +68,41 @@ a {
   transition: all 0.25s ease-in-out;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .links i:hover {
   color: #00ddff;
 }
 
 /*
   Content
 */
+
+
+
+/*
+  Footer
+*/
+
+footer {
+  height: 100px;
+  background-color: rgb(22, 25, 45);
+}
+
+.end {
+  line-height: 100px;
+}
+
+.links ul li {
+  list-style: none;
+}
+
+.links i {
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+
+.copyright {
+  font-size: 17px;
+  color: #fff;
+}
