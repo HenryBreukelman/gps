@@ -5,15 +5,22 @@
 */
 
 const findButton = document.querySelector('.find-button');
-const map = document.querySelector('.map-box');
+const mapBox = document.querySelector('.map-box');
 let longitude = 0;
 let latitude = 0;
-
-mapboxgl.accessToken= 'pk.eyJ1IjoiaGVucnktYnJldWtlbG1hbiIsImEiOiJjbHVzdnVmbmowbWFuMnRvYXc5bnoxZzJhIn0.3dWxxXjWkhgnmthMfPBSiA';
 
 /*
   functions
 */
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnktYnJldWtlbG1hbiIsImEiOiJjbHVzdnVmbmowbWFuMnRvYXc5bnoxZzJhIn0.3dWxxXjWkhgnmthMfPBSiA';
+
+const map = new mapboxgl.Map({
+	container: 'map', // container ID
+	style: 'mapbox://styles/mapbox/streets-v12', // style URL
+	center: [-97.135049, 49.888825], // starting position [lng, lat]
+	zoom: 9, // starting zoom
+});
 
 function loadMap() {
   if ('geolocation' in navigator) {
@@ -47,4 +54,3 @@ const options = {
 */
 
 findButton.addEventListener('click', loadMap);
-//window.addEventListener('load', loadMap);
