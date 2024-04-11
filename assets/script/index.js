@@ -36,8 +36,9 @@ function getLocation(position) {
 
   let location = [longitude, latitude];
   map.flyTo({ center: location, zoom: 10 });
-  const marker = new mapboxgl.Marker()
-    .setLngLat([longitude, latitude])
+  let marker = new mapboxgl.Marker({
+    color: "#0079f4",
+    }).setLngLat(location)
     .addTo(map);
 }
 
