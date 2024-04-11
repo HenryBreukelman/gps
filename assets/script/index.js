@@ -6,8 +6,6 @@
 
 const findButton = document.querySelector('.find-button');
 const mapBox = document.querySelector('.map-box');
-let longitude = 0;
-let latitude = 0;
 
 /*
   functions
@@ -19,7 +17,8 @@ const map = new mapboxgl.Map({
 	container: 'map', // container ID
 	style: 'mapbox://styles/mapbox/streets-v12', // style URL
 	center: [-97.135049, 49.888825], // starting position [lng, lat]
-	zoom: 10, // starting zoom
+	zoom: 12, // starting zoom
+  pitch: 45,
 });
 
 function loadMap() {
@@ -28,21 +27,22 @@ function loadMap() {
       getLocation, errorHandler, options
     );
   } else {
-    console.log('geolocation not supported')
+    console.log('geolocation not supported');
   }
 }
 
 function getLocation(position) {
-  let { latitude, longitude } = position.coords
+  let { latitude, longitude } = position.coords;
 
   let location = [longitude, latitude];
   map.flyTo({ center: location, zoom: 10 });
-  //marker(location);
-
+  const marker = new mapboxgl.Marker()
+    .setLngLat([longitude, latitude])
+    .addTo(map);
 }
 
 function errorHandler() {
-  console.log('unable to get location')
+  console.log('unable to get location');
 }
 
 const options = {
