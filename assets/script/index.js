@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
 	container: 'map', // container ID
 	style: 'mapbox://styles/mapbox/streets-v12', // style URL
 	center: [-97.135049, 49.888825], // starting position [lng, lat]
-	zoom: 9, // starting zoom
+	zoom: 10, // starting zoom
 });
 
 function loadMap() {
@@ -35,10 +35,10 @@ function loadMap() {
 function getLocation(position) {
   let { latitude, longitude } = position.coords
 
-  console.log(
-    `Latitude: ${latitude}, 
-    longitude: ${longitude}`
-  );
+  let location = [longitude, latitude];
+  map.flyTo({ center: location, zoom: 10 });
+  //marker(location);
+
 }
 
 function errorHandler() {
